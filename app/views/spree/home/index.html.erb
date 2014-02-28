@@ -1,0 +1,19 @@
+<% content_for :sidebar do %>
+    <div class="left-column" id="sidebar">
+      <div class="module">
+        <div data-hook="homepage_sidebar_navigation">
+          <%= render :partial => 'spree/shared/taxonomies' %>
+        </div>
+      </div>
+    </div>
+<% end %>
+<div data-hook="homepage_products">
+  <%= render :partial => 'spree/shared/products',
+             :locals => { :products  => @products } %>
+</div>
+
+<script>
+    $(document).ready(function(){
+        $("a.grid").click();
+    });
+</script>
